@@ -15,8 +15,8 @@ void Ball::setup(){
     x = ofRandom(0, ofGetWidth());      // give some random positioning
     y = ofRandom(0, ofGetHeight());
     
-    speedX = ofRandom(-10, 10);           // and random speed and direction
-    speedY = ofRandom(-10, 10);
+    speedX = 2;          // and random speed and direction
+    speedY = 2;
     
     diameter = 20;
 
