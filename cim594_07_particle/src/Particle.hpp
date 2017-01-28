@@ -33,6 +33,7 @@ public:
     void draw();
     
     float damping;
+    float radius;
     
 protected:
 private:

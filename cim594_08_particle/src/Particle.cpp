@@ -62,7 +62,7 @@ void Particle::draw(){
 void Particle::bounceOffWalls(){
     
     // sometimes it makes sense to damped, when we hit... for now, we don't
-    bool bDampedOnCollision = false;
+    bool bDampedOnCollision = true;
     bool bDidICollide = false;
     
     // what are the walls

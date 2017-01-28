@@ -40,7 +40,7 @@ void ofApp::draw(){
 //    ofFill();
     // picasso !!!
     
-//    ofNoFill();
+    ofNoFill();
     ofBeginShape();
     for (int i = 0; i < particles.size(); i++){
         ofVertex(particles[i].pos.x, particles[i].pos.y);
@@ -71,7 +71,7 @@ void ofApp::mouseDragged(int x, int y, int button){
     float dy = y - prevMouseY;
     
     Particle myParticle;
-    myParticle.setInitialCondition(x,y, dx*0.3,dy*0.3);
+    myParticle.setInitialCondition(x,y, dx*0.9,dy*0.9);
     particles.push_back(myParticle);
     
     

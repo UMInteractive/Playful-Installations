@@ -35,7 +35,11 @@ public:
     void bounceOffWalls();
     
     float damping;
+    float a;
+    ofColor color;
     ofImage *img;
+    bool loadedImage;
+    float radius;
     
 protected:
 private:

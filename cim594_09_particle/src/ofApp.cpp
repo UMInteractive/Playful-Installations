@@ -11,18 +11,7 @@ void ofApp::setup(){
     ofSetFrameRate(60);
     
     gem.load("gem.png");
-    for (int i = 0; i < 1000; i++){
-        Particle myParticle;
-        float vx = ofRandom(-10,10);
-        float vy = ofRandom(-10,10);
-        myParticle.setInitialCondition(300,300,vx, vy);
-        // more interesting with diversity :)
-        // uncomment this:
-        myParticle.damping = ofRandom(0.01, 0.05);
-        myParticle.addImage(gem);
-        particles.push_back(myParticle);
-    }
-    
+    ofBackground(0);
 }
 
 //--------------------------------------------------------------
@@ -41,12 +30,24 @@ void ofApp::update(){
         particles[i].addDampingForce();
         particles[i].update();
     }
+    if(ofGetFrameNum()%60 == 0) {
+        ofColor tmpColor = ofColor(ofRandom(255), ofRandom(255), ofRandom(255));
+        Particle myParticle;
+        float vx = ofRandom(-1,1);
+        float vy = ofRandom(-1,1);
+        myParticle.setInitialCondition(ofRandom(ofGetWidth()),ofRandom(ofGetHeight()),vx, vy);
+        myParticle.color = tmpColor;
+        // more interesting with diversity :)
+        // uncomment this:
+        myParticle.damping = ofRandom(0.01, 0.05);
+        myParticle.addImage(gem);
+        particles.push_back(myParticle);
+    }
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofSetColor(255,255,255);
 
     for (int i = 0; i < particles.size(); i++){
         particles[i].draw();
@@ -70,17 +71,36 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
+        ofColor tmpColor = ofColor(ofRandom(255), ofRandom(255), ofRandom(255));
+        Particle myParticle;
+        float vx = ofRandom(-1,1);
+        float vy = ofRandom(-1,1);
+        myParticle.setInitialCondition(x,y,vx, vy);
+        myParticle.color = tmpColor;
+        // more interesting with diversity :)
+        // uncomment this:
+        myParticle.damping = ofRandom(0.01, 0.05);
+        myParticle.addImage(gem);
+        particles.push_back(myParticle);
+
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
+/*
+    ofColor tmpColor = ofColor(ofRandom(255), ofRandom(255), ofRandom(255));
+
     for (int i = 0; i < particles.size(); i++){
-        float vx = ofRandom(-4,4);
-        float vy = ofRandom(-4,4);
+        float vx = ofRandom(-10,10);
+        float vy = ofRandom(5,10);
+        particles[i].color = tmpColor;
+        particles[i].a = 255;
+
         particles[i].setInitialCondition(mouseX,mouseY,vx, vy);
         
     }
-}
+*/
+ }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){

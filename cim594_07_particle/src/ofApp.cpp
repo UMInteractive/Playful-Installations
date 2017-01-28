@@ -73,8 +73,8 @@ void ofApp::mouseDragged(int x, int y, int button){
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
     for (int i = 0; i < particles.size(); i++){
-        float vx = ofRandom(-4,4);
-        float vy = ofRandom(-4,4);
+        float vx = ofRandom(5,10);
+        float vy = ofRandom(-10,10);
         particles[i].setInitialCondition(mouseX,mouseY,vx, vy);
         
     }

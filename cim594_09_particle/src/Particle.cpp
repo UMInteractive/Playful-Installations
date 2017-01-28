@@ -13,6 +13,10 @@
 Particle::Particle(){
     setInitialCondition(0,0,0,0);
     damping = 0.01f;
+    loadedImage = false;
+    color = ofColor(255,255,255);
+    a = 255;
+    radius = ofRandom(10,50);
 }
 
 //------------------------------------------------------------
@@ -50,17 +54,20 @@ void Particle::setInitialCondition(float px, float py, float vx, float vy){
 
 void Particle::addImage(ofImage &image) {
     img = &image;
+    loadedImage = true;
 }
 //------------------------------------------------------------
 void Particle::update(){
     vel = vel + frc;
     pos = pos + vel;
+    a *= .99f;
 }
 
 //------------------------------------------------------------
 void Particle::draw(){
-    if(img) {
-        img->draw(pos.x, pos.y);
+    ofSetColor(color, 255);
+    if(loadedImage) {
+        img->draw(pos.x, pos.y, radius, radius);
     }
     else {
         ofDrawCircle(pos.x, pos.y, 3);

@@ -13,6 +13,7 @@
 Particle::Particle(){
     setInitialCondition(0,0,0,0);
     damping = 0.01f;
+    radius = 10.0f;
 }
 
 //------------------------------------------------------------
@@ -52,9 +53,10 @@ void Particle::setInitialCondition(float px, float py, float vx, float vy){
 void Particle::update(){
     vel = vel + frc;
     pos = pos + vel;
+    radius *= .95f;
 }
 
 //------------------------------------------------------------
 void Particle::draw(){
-    ofCircle(pos.x, pos.y, 3);
+    ofDrawCircle(pos.x, pos.y, radius);
 }
