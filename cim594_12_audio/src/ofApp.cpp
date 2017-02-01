@@ -48,6 +48,7 @@ void ofApp::audioIn(float * input, int bufferSize, int nChannels){
     loudness = rms;
     threshold = ofLerp(threshold, minimumThreshold, decayRate);
     if(loudness > threshold) {
+        
         ofColor tmpColor = ofColor(ofRandom(255), ofRandom(255), ofRandom(255));
         Particle myParticle;
         float vx = ofRandom(-1,1);
