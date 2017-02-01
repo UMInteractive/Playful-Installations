@@ -3,7 +3,6 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     soundStream.printDeviceList();
-    
     //if you want to set a different device id
     //soundStream.setDeviceID(0); //bear in mind the device id corresponds to all audio devices, including  input-only and output-only devices.
     

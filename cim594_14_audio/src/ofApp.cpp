@@ -57,7 +57,10 @@ void ofApp::audioIn(float * input, int bufferSize, int nChannels){
         //when the timer reaches our limit, we let it go
         if(timer < ofGetElapsedTimef()) {
             //then we add 5 seconds to the existing time again
+            
             timer = ofGetElapsedTimef() + 5;
+
+            
             //times up, allow something to happen
             ofColor tmpColor = ofColor(ofRandom(255), ofRandom(255), ofRandom(255));
             Particle myParticle;

@@ -30,6 +30,7 @@ void ofApp::audioIn(float * input, int bufferSize, int nChannels){
     
     rms /= (float)numCounted;
     rms = sqrt(rms);
+
     loudness_history.push_back(rms);
 }
 

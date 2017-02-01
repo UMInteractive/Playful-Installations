@@ -29,5 +29,8 @@ class ofApp : public ofBaseApp{
         ofSoundStream soundStream;
 
         vector <Particle> particles;
+    int x;
+    int y;
+    ofTrueTypeFont myFont;
 
 };

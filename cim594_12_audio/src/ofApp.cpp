@@ -46,6 +46,7 @@ void ofApp::audioIn(float * input, int bufferSize, int nChannels){
     rms /= (float)numCounted;
     rms = sqrt(rms);
     loudness = rms;
+
     threshold = ofLerp(threshold, minimumThreshold, decayRate);
     if(loudness > threshold) {
         

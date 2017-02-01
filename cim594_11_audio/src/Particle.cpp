@@ -16,7 +16,7 @@ Particle::Particle(){
     color = ofColor(255,255,255);
     a = 255;
     radius = ofRandom(10,50);
-    life = 100;
+    life = 1000;
 }
 
 //------------------------------------------------------------
@@ -56,14 +56,18 @@ void Particle::setInitialCondition(float px, float py, float vx, float vy){
 void Particle::update(){
     vel = vel + frc;
     pos = pos + vel;
-    a *= .99f;
+//    a *= .99f;
+    a -= 1;
     life--;
+    radius*= .98f;
 }
 
 //------------------------------------------------------------
 void Particle::draw(){
-        ofSetColor(color, 255);
-        ofDrawCircle(pos.x, pos.y, 3);
+        ofSetColor(color, a);
+        ofNoFill();
+        ofSetLineWidth(2);
+        ofDrawCircle(pos.x, pos.y, radius);
 }
 
 void Particle::bounceOffWalls(){
