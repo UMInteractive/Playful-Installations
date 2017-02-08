@@ -25,5 +25,7 @@ class ofApp : public ofBaseApp{
         int currentPosition;
     
         vector<TimedSound> sounds;
+    int grabbedIndex;
+    bool movingSound;
         ofSoundPlayer mySound;
 };

@@ -25,6 +25,8 @@ public:
     int position;
     void draw();
     void update();
+    bool grabbing(int x, int y);
+    void move(int x, int pos);
     void play(int pos);
     void setInitialConditions(int x, int y, int pos);
     

@@ -22,6 +22,18 @@ void TimedSound::play(int pos) {
     }
 }
 
+bool TimedSound::grabbing(int x, int y) {
+    if(ofDist(x, y, a.x, a.y) <= 20) {
+        return true;
+    }
+    return false;
+}
+
+void TimedSound::move(int x, int pos) {
+    a.set(x, a.y);
+    position = pos;
+}
+
 void TimedSound::update() {
     
 }

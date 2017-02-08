@@ -55,21 +55,35 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+    if(movingSound) {
+        float xPos = ofMap(x, 0, ofGetWidth(), 0, loopReturnLength);
+        sounds[grabbedIndex].move(x, xPos);
+    }
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
+    for (int i = 0; i < sounds.size(); i++) {
+        if(sounds[i].grabbing(x, y)) {
+            grabbedIndex = i;
+            movingSound = true;
+        }
+    }
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
+    if(!movingSound) {
     TimedSound tmpSound;
     tmpSound.sound = &mySound;
     float xPos = ofMap(x, 0, ofGetWidth(), 0, loopReturnLength);
 
     tmpSound.setInitialConditions(x,ofGetHeight()/2, xPos);
     sounds.push_back(tmpSound);
+    }
+    else {
+        movingSound = false;
+    }
 }
 
 //--------------------------------------------------------------
