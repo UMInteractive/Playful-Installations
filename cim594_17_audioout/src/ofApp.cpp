@@ -5,7 +5,7 @@ void ofApp::setup(){
     beat.load("drumloop.wav");
     beat.setLoop(true);
     beat.play();
-    yPos = ofGetHeight();
+    yPos = ofGetHeight()/2;
     changingVolume = false;
 
 }

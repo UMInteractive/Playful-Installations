@@ -20,7 +20,6 @@ void TimedSound::draw() {
 
 void TimedSound::update() {
     
-    float start = timeBetweenPlays - ofGetElapsedTimef();
     if(timeBetweenPlays <= ofGetElapsedTimef()) {
         sound->play();
         timeBetweenPlays += timer;
@@ -31,7 +30,6 @@ void TimedSound::setInitialConditions(int x, int y, float t) {
     sound->setMultiPlay(true);
     sound->play();
     a.set(x,y);
-    position = 0;
     timer = t;
     timeBetweenPlays = t + ofGetElapsedTimef();
 }

@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    sound.load("drumloop.wav");
+    sound.load("impact.wav");
     sound.setLoop(true);
     sound.play();
 }

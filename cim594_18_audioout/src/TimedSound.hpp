@@ -22,7 +22,6 @@ public:
     ofSoundPlayer *sound;
     
     ofVec2f a;
-    ofVec2f b;
     float position;
     float timer;
     float timeBetweenPlays;
