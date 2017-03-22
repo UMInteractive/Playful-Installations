@@ -12,7 +12,7 @@ void ofApp::setup(){
             //max brightness = 1 - (255 / 255) = 0
             //min brightness = 1 - (0 / 255) = 1
             
-            if(cur.getBrightness() > 100) {
+            if(cur.getBrightness() > 10) {
                 Particle p;
                 p.setInitialCondition(x, y, 0, 0);
                 p.radius = 2;

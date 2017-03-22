@@ -23,8 +23,8 @@ void ofApp::draw(){
             //getBrightness will return a number between 0 and 255 for ofColor
             //max brightness = 1 - (255 / 255) = 0
             //min brightness = 1 - (0 / 255) = 1
-            float size = 1 - (cur.getBrightness() / 255);
-//            float size = 1 - (cur.getHue() / 255);
+//            float size = 1 - (cur.getBrightness() / 255);
+            float size = 1 - (cur.getHue() / 255);
 //            float size = 1 - (cur.getSaturation() / 255);
 //            float size = 1 - (cur.getLightness() / 255);
 

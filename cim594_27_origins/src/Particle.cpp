@@ -56,7 +56,7 @@ void Particle::setInitialCondition(float px, float py, float vx, float vy){
 //------------------------------------------------------------
 void Particle::returnToOrigin(){
     if(returning) {
-        pctReturn += .01;
+        pctReturn += .001;
         if(pctReturn > 1) {
             pctReturn = 0;
             returning = false;

@@ -43,12 +43,15 @@ void ofApp::draw(){
     ofSetColor(255);
 
     for(int i = 0; i < contourFinder.nBlobs; i++) {
-        for(int j = 0; j < contourFinder.blobs[i].pts.size() - 1; j++) {
-            ofDrawLine(contourFinder.blobs[i].pts[j], contourFinder.blobs[i].pts[j+1]);
-        }
+        ofDrawCircle(contourFinder.blobs[i].centroid,  50);
+        //        for(int j = 0; j < contourFinder.blobs[i].pts.size() - 1; j++) {
+//            ofDrawLine(contourFinder.blobs[i].pts[j], contourFinder.blobs[i].pts[j+1]);
+//        }
         
     }
-}
+
+//    grayDiff.draw(0,0);
+ }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
@@ -68,7 +71,7 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+    threshold = ofMap(x, 0, ofGetWidth(), 10, 200);
 }
 
 //--------------------------------------------------------------
